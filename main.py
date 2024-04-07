@@ -9,7 +9,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:102030@localhost:
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Define o modelo de dados com Flask-RESTx
 ns = api.namespace('usuarios', description='Operações relacionadas aos usuários')
 usuario_model = api.model('Usuario', {
     'id': fields.Integer(readonly=True, description='Identificador único do usuário'),
@@ -76,5 +75,4 @@ class UsuarioResource(Resource):
         return '', 204
 
 if __name__ == '__main__':
-    #db.create_all()
     app.run(debug=True)
