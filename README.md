@@ -38,7 +38,7 @@ docker run --name db_local -e POSTGRES_PASSWORD=102030 -d -p 5432:5432 postgres
 
 Isso criará e iniciará um contêiner Docker chamado db_local rodando PostgreSQL. A porta 5432 do contêiner será mapeada para a porta 5432 do host.
 
-Crie um arquivo .env na raiz do seu projeto para armazenar as variáveis de ambiente:
+Crie um arquivo *.env* na raiz do seu projeto para armazenar as variáveis de ambiente:
 
 ```shell
 DATABASE_URL=postgresql://postgres:102030@localhost:5432/postgres
