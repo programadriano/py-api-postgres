@@ -1,11 +1,15 @@
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_restx import Api, Resource, fields
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
 api = Api(app, version='1.0', title='API de Usuários', description='Uma simples API de usuários')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:102030@localhost:5432/postgres'
+load_dotenv()
+
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

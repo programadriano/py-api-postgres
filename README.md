@@ -25,7 +25,7 @@ source envs/bin/activate
 Com o ambiente virtual ativado, instale as dependências necessárias:
 
 ```shell
-pip install flask sqlalchemy psycopg2-binary flask_sqlalchemy flask-restx
+pip install flask sqlalchemy psycopg2-binary flask_sqlalchemy flask-restx python-dotenv
 ```
 
 ## Configuração do Banco de Dados
