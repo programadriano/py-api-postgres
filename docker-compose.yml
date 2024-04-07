@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    command: python main.py
+    volumes:
+      - .:/code
+    ports:
+      - "5080:80"
+    environment:
+      - FLASK_APP=main.py
+      - FLASK_ENV=development
+    depends_on:
+      - db
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 102030
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

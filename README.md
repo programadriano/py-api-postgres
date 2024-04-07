@@ -61,3 +61,15 @@ CREATE TABLE usuario (
 ## Executar a Aplicação
 Com o ambiente configurado e o banco de dados iniciado, você pode agora executar sua aplicação Flask com o comando 
 `python main.py`
+
+
+## Usando Docker Compose para a Configuração do Banco de Dados e Aplicação
+
+Em vez de iniciar manualmente o PostgreSQL e configurar sua aplicação, você pode usar docker-compose para simplificar esse processo executando o comando abaixo:
+
+```shell
+docker-compose up --build
+```
+
+
+
